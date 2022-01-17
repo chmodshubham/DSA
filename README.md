@@ -1,2 +1,2 @@
-# CPP/C++_Course
+# CPP/C++_Practice_Codes
 #DSA Practice
