@@ -1,0 +1,1 @@
+newhead->next = NULL;
