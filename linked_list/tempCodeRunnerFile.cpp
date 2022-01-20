@@ -1,1 +1,1 @@
-newhead->next = NULL;
+ // head->insertAtTail(head, 1);
