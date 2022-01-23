@@ -1,7 +1,8 @@
 #include <iostream>
 #include <stack>
-#include <math.h>
 using namespace std;
+
+// first we reverse the string and change the characters '(' to ')' and ')' to '(' and then proceed with the infix2postprefix function and then again reverse the string
 
 int precedence(char ch)
 {
