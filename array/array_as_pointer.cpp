@@ -22,5 +22,44 @@ int main()
 		// arr is an indexing pointer
 		// arr++ is the wrong way to represent the incrementation part
 	}
+
+	int arr1[] = {1, 2, 3, 4, 5, 6, 7};
+	int *ptr = arr1;
+	cout << ptr[2] << endl; // 3
+	cout << ptr << endl;	// address
+
+	cout << *ptr++ << endl; // 1
+	cout << ptr[1] << endl; // 3
+	cout << *ptr++ << endl; // 2
+	cout << *++ptr << endl; // 4
+
+	cout << arr1 << endl;	  // address
+	cout << arr1 + 1 << endl; // address
+
+	int &ptr2 = arr1[0];   // ptr2 is a variable which is storing value at arr1[0] and having the same address of arr1[0] due to which we can say that ptr2 is pointing the arr1[0]
+	cout << ptr2 << endl;  // 1
+	cout << &ptr2 << endl; // address
+
+	int a = 1, b = 2, c = 3;
+	int *ptr11 = &a;
+	int *ptr22 = &b;
+	int *ptr33 = &c;
+
+	cout << ptr11 << endl;
+	cout << ptr22 << endl;
+	cout << ptr33 << endl;
+
+	int *arr00[] = {ptr11, ptr22, ptr33};
+	int **p = arr00;
+	// cout << &ptr11 << endl;
+	cout << **p << endl;
+	cout << *p << endl;
+	cout << p << endl;
+	cout << p[1] << endl;
+
+	cout << arr00 << endl;
+	cout << arr00[0] << endl;
+	cout << **arr00 << endl;
+
 	return 0;
 }
