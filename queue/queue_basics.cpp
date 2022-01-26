@@ -3,7 +3,7 @@ using namespace std;
 #define n 20
 
 // FIFO- first in first out
-
+// back side ,in ,i.e. -> and front side ,out, i.e. ->
 class queue
 {
 
