@@ -16,30 +16,32 @@ struct node
     }
 };
 
-int search(int inorder[], int start, int end, int curr)
+int search(int inorder[], int start, int end, int val)
 {
     for (int i = start; i < end; i++)
     {
-        if (inorder[i] == curr)
+        if (inorder[i] == val)
+        {
             return i;
+        }
     }
     return -1;
 }
 
-node *buildTree(int preorder[], int inorder[], int start, int end)
+node *buildTree(int postorder[], int inorder[], int start, int end)
 {
     if (start > end)
         return NULL;
-    static int idx = 0;
-    int curr = preorder[idx];
-    idx++;
-    node *n = new node(curr);
+    static int idx = 4;
+    int val = postorder[idx];
+    idx--;
+    node *n = new node(val);
     if (start == end)
         return n;
-    int pos = search(inorder, start, end, curr);
-    n->left = buildTree(preorder, inorder, start, pos - 1);
-    n->right = buildTree(preorder, inorder, pos + 1, end);
 
+    int pos = search(inorder, start, end, val);
+    n->right = buildTree(postorder, inorder, pos + 1, end);
+    n->left = buildTree(postorder, inorder, start, pos - 1);
     return n;
 }
 
@@ -54,10 +56,10 @@ void inorderPrint(node *root)
 
 int main()
 {
-    int preorder[] = {1, 2, 4, 3, 5};
+    int postorder[] = {4, 2, 5, 3, 1};
     int inorder[] = {4, 2, 1, 5, 3};
 
-    node *root = buildTree(preorder, inorder, 0, 4); // 0 start point of inorder and 4 is end point of inorder
+    node *root = buildTree(postorder, inorder, 0, 4); // 0 start point of inorder and 4 is end point of inorder
     inorderPrint(root);
     return 0;
 }
