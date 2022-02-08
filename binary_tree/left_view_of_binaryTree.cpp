@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
-#include <iostream>
 using namespace std;
 
-// very important concept, to understand the concept of right view and left view in binary tree
 struct node
 {
     int data;
@@ -17,33 +15,34 @@ struct node
     }
 };
 
-void printLevelOrder(node *root)
+void left_view(node *root)
 {
     if (root == NULL)
         return;
 
     queue<node *> q;
     q.push(root);
-    q.push(NULL);
 
     while (!q.empty())
     {
-        node *n = q.front(); // n is a pointer that traverse through the tree
-        q.pop();
-
-        if (n != NULL)
+        int n = q.size();
+        for (int i = 0; i < n; i++)
         {
-            cout << n->data << " ";
+            node *curr = q.front();
+            q.pop();
 
-            if (n->left != NULL)
-                q.push(n->left);
-            if (n->right)
-                q.push(n->right);
-        }
+            if (i == 0) // we equate 'i' with 0 to get the leftmost node of each level in binary tree
+            {
+                cout << curr->data << " ";
+            }
 
-        else if (!q.empty())
-        {
-            q.push(NULL);
+            if (curr->left != NULL)
+                q.push(curr->left);
+
+            if (curr->right != NULL)
+            {
+                q.push(curr->right);
+            }
         }
     }
 }
@@ -60,5 +59,5 @@ int main()
     root->right->left = new node(6);
     root->right->right = new node(7);
 
-    printLevelOrder(root);
+    left_view(root);
 }
