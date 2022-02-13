@@ -25,17 +25,17 @@ void flatten(node *root) // convert into linked list
     {
         flatten(root->left);
 
-        node *temp = root->right;
-        root->right = root->left;
-        root->left = NULL;
+        node *temp = root->right; // construct a temporary pointer to point the right sub-tree
+        root->right = root->left; // then attach the left subtree to the right part of root
+        root->left = NULL;        // make the left node of the root be NULL
 
-        node *t = root->right;
+        node *t = root->right; // now create a temporary pointer to traverse the left subtree that is attached to the right part of the root node
         while (t->right != NULL)
         {
             t = t->right;
         }
-
-        t->right = temp;
+        // after the loop ends the 't' points to the end part of the right attached left tree
+        t->right = temp; // now connect the right part of 't' with the deattached right subtree and make a complete linked list
     }
 
     flatten(root->right);
@@ -61,7 +61,9 @@ int main()
 
     root->right->left = new node(6);
     root->right->right = new node(7);
-
+    // inorder(root);
+    // cout << endl
+    //      << endl;
     flatten(root);
     inorder(root);
     cout << endl;
