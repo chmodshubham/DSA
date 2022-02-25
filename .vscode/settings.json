@@ -3,7 +3,8 @@
     "*.json": "bat",
     "iostream": "cpp",
     "ostream": "cpp",
-    "new": "cpp"
+    "new": "cpp",
+    "*.tcc": "cpp"
   },
   "git.ignoreLimitWarning": true
 }
