@@ -54,7 +54,6 @@ class d : public def, public ghi
 // multi level inheritance
 class jkl
 {
-
 public:
     void func1()
     {

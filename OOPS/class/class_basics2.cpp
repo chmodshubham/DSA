@@ -36,7 +36,7 @@ public:
         cout << " destructor called" << endl;
     }
 
-    bool operator==(student &z) // operator  overloading
+    bool operator==(student &z) // operator  overloading // here we can create our own operators
     {
         if (name == z.name && age == z.age && gender == z.gender)
             return true;
