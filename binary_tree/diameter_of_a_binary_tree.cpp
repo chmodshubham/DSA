@@ -4,8 +4,8 @@ using namespace std;
 struct node
 {
     int data;
-    node *left = NULL;
-    node *right = NULL;
+    node* left = NULL;
+    node* right = NULL;
 
     node(int val)
     {
@@ -15,7 +15,7 @@ struct node
     }
 };
 
-int cal_height(node *root)
+int cal_height(node* root)
 {
     if (root == NULL)
         return 0;
@@ -23,10 +23,11 @@ int cal_height(node *root)
     return max(cal_height(root->left), cal_height(root->right)) + 1;
 }
 
-int calculate_diameter(node *root)
+int calculate_diameter(node* root)
 {
     if (root == NULL)
         return 0;
+
     int left_height = cal_height(root->left);
     int right_height = cal_height(root->right);
     int curr_diameter = left_height + right_height + 1; //+1 for taking the current node as a part in the diameter
@@ -39,7 +40,7 @@ int calculate_diameter(node *root)
 
 int main()
 {
-    node *root = NULL;
+    node* root = NULL;
     root = new node(1);
     root->left = new node(2);
     root->right = new node(3);
