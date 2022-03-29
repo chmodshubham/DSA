@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     set<int> s; // duplicate elements are not allowed // by default it store the elements in ascending order
-    // set<int, greater<int>> s; // stores element in descending order
+    // set<int, greater<int>> s; // stores element in  descending order
     s.insert(1);
     s.insert(2);
     s.insert(2);
