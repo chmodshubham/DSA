@@ -32,7 +32,7 @@ void heapsort(vi &a)
 {
     int n = a.size();
 
-    for (int i = n / 2 - 1; i >= 0; i--) // n/2-1 denotes the last non leaf node
+    for (int i = n / 2 - 1; i >= 0; i--) // (n/2)-1 denotes the last non leaf node
     {
         heapify(a, n, i);
     }
