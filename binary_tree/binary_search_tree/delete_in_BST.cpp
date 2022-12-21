@@ -17,7 +17,7 @@ struct node
 
 node *inorder_successor(node *root)
 {
-    while (/*root != NULL &&*/ root->left != NULL)
+    while (root->left != NULL)
     {
         root = root->left;
     }
